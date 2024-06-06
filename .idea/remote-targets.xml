@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <option name="projectDefaultTargetUuid" value="95fde03a-1dfd-449b-a735-77a6b773083a" />
+    <targets>
+      <target name="WSL" type="wsl" uuid="af76023d-db46-424c-a478-72c65ca2e988">
+        <config>
+          <option name="distributionMsId" value="Ubuntu" />
+        </config>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="homePath" value="/home/oaleman/.jdks/corretto-21.0.3" />
+            <option name="javaVersionString" value="21" />
+          </config>
+        </ContributedStateBase>
+        <ContributedStateBase type="MavenRuntime">
+          <config>
+            <option name="homePath" value="/mnt/c/Program Files/apache-maven-3.8.6" />
+            <option name="versionString" value="3.8.6" />
+          </config>
+        </ContributedStateBase>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="homePath" value="/home/oaleman/.jdks/corretto-21.0.3" />
+            <option name="javaVersionString" value="21" />
+          </config>
+        </ContributedStateBase>
+        <ContributedStateBase type="MavenRuntime">
+          <config />
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>
