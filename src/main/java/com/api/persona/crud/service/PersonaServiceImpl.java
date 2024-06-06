@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,6 +17,16 @@ public class PersonaServiceImpl implements IPersonaService {
 
     public PersonaServiceImpl(IPersonaRepository personaRepository) {
         this.personaRepository = personaRepository;
+    }
+
+    @Override
+    public Page<PersonaEntity> findAll(Pageable pageable) throws ServiceException {
+        try {
+            //Retornar todos los registros con estado activo
+            return personaRepository.findAllByEstado();
+        } catch (Exception e) {
+            throw new ServiceException(e.getMessage());
+        }
     }
 
     @Override

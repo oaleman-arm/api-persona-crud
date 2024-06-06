@@ -23,6 +23,27 @@ public class ProductoRestController {
         this.productoService = productoService;
     }
 
+    @GetMapping
+public ResponseEntity<Page<PersonaEntity>> findAll(
+            @RequestParam(value = "page", defaultValue = "1") Integer page,
+            @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        try {
+            if (page < 0 || size < 0) {
+                throw new GlobalNotFoundException("Los valores de page y size deben ser mayores a 0");
+            }
+
+            Pageable pageable = PageRequest.of(page, size);
+            Page<PersonaEntity> personaEntityPage = productoService.findAll(pageable);
+
+            if (personaEntityPage.isEmpty()) {
+                throw new GlobalNotFoundException("No existen registros");
+            }
+            return ResponseEntity.ok(personaEntityPage);
+        } catch (ServiceException e) {
+            throw new GlobalNotFoundException(e.getMessage());
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<PersonaEntity> findById(@PathVariable Long id) {
         try {

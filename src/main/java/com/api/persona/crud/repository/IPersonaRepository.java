@@ -16,4 +16,7 @@ public interface IPersonaRepository extends JpaRepository<PersonaEntity, Long>{
     //Paginado
     @Query("select p from PersonaEntity p where upper(p.nombre) like upper(:nombre) and p.estado='1'")
     Page<PersonaEntity> findByLikeNombre(Pageable pageable, @Param("nombre") String nombre);
+
+    @Query("select p from PersonaEntity p where p.estado='1'")
+    Page<PersonaEntity> findAllByEstado();
 }
