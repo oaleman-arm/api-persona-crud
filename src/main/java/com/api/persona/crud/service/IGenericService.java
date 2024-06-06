@@ -12,7 +12,7 @@ public interface IGenericService<T> {
 
     Optional<T> findById(T t) throws ServiceException;
 
-    Page<T> findLikeObject(Pageable pageable, String t) throws ServiceException;
+    Page<T> findLikeObject(Pageable pageable, String nombre) throws ServiceException;
 
     T save(T t) throws ServiceException;
 

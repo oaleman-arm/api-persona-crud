@@ -18,5 +18,5 @@ public interface IPersonaRepository extends JpaRepository<PersonaEntity, Long>{
     Page<PersonaEntity> findByLikeNombre(Pageable pageable, @Param("nombre") String nombre);
 
     @Query("select p from PersonaEntity p where p.estado='1'")
-    Page<PersonaEntity> findAllByEstado();
+    Page<PersonaEntity> findAllByEstado(Pageable pageable);
 }

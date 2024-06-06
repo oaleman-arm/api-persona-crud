@@ -23,7 +23,7 @@ public class PersonaServiceImpl implements IPersonaService {
     public Page<PersonaEntity> findAll(Pageable pageable) throws ServiceException {
         try {
             //Retornar todos los registros con estado activo
-            return personaRepository.findAllByEstado();
+            return personaRepository.findAllByEstado(pageable);
         } catch (Exception e) {
             throw new ServiceException(e.getMessage());
         }
