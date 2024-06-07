@@ -14,9 +14,10 @@ import java.util.List;
 public interface IPersonaRepository extends JpaRepository<PersonaEntity, Long>{
     // JPQL(Java Persistence Query Language)
     //Paginado
-    @Query("select p from PersonaEntity p where upper(p.nombre) like upper(:nombre) and p.estado='1'")
+    @Query("select p from PersonaEntity p where upper(p.nombre) like upper(:nombre) and p.estado='1' ORDER BY ?#{#pageable}")
     Page<PersonaEntity> findByLikeNombre(Pageable pageable, @Param("nombre") String nombre);
 
-    @Query("select p from PersonaEntity p where p.estado='1'")
+    @Query("select p from PersonaEntity p where p.estado='1' ORDER BY ?#{#pageable}")
+    //@Query(value="select * from tbl_persona where estado='1' ORDER BY ?#{#pageable}",nativeQuery = true)
     Page<PersonaEntity> findAllByEstado(Pageable pageable);
 }

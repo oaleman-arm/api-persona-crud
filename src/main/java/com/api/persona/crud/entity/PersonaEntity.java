@@ -4,11 +4,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @NoArgsConstructor
+@Data
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-@Entity(name ="PersonaEntity" )
+@Entity
 @Table(name = "tbl_persona")
 public class PersonaEntity {
     @Id
