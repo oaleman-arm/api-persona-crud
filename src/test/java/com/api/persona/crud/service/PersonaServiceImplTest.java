@@ -4,7 +4,6 @@ import com.api.persona.crud.repository.IPersonaRepository;
 import com.api.persona.crud.entity.PersonaEntity;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.Incubating;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -27,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
 @SpringBootTest
-@RunWith(MockitoJUnitRunner.class)
 @ExtendWith(MockitoExtension.class)
 class PersonaServiceImplTest {
 
